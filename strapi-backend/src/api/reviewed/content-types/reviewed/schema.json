@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "revieweds",
+  "info": {
+    "singularName": "reviewed",
+    "pluralName": "revieweds",
+    "displayName": "reviewed",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "comment": {
+      "type": "text"
+    },
+    "score": {
+      "type": "integer",
+      "max": 5
+    },
+    "shop": {
+      "type": "string"
+    },
+    "member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::member.member",
+      "inversedBy": "revieweds"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "members",
+  "info": {
+    "singularName": "member",
+    "pluralName": "members",
+    "displayName": "Member",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "stdID": {
+      "type": "string"
+    },
+    "gen": {
+      "type": "enumeration",
+      "enum": [
+        "men",
+        "women"
+      ]
+    },
+    "favorites": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::favorite.favorite"
+    },
+    "revieweds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reviewed.reviewed",
+      "mappedBy": "member"
+    }
+  }
+}
